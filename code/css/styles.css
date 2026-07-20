@@ -1,0 +1,26 @@
+/* Minimal color classes for a tiny CSS colours demo */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap');
+header {
+    text-align:center;
+    color:white;
+    background:blue;
+}
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  padding: 18px;
+}
+.swatch { width:120px; height:80px; display:inline-block; margin:8px; border:1px solid #ccc; text-align:center; line-height:80px; }
+.bg-red { background:#e74c3c; color:#fff; }
+.bg-green { background:#000000; color:#fff; }
+.bg-blue { background:#000000; color:#fff; }
+.bg-yellow { background:#f1c40f; color:#111; }
+.bg-purple { background:#9b59b6; color:#fff; }
+.bg-gray { background:#bdc3c7; color:#111; }
+
+/* Font utility classes */
+.font-roboto { font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+.font-merri { font-family: 'Merriweather', Georgia, 'Times New Roman', serif; }
+.font-fira { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; }
+.font-yuyu { font-family: 'Yuyu', cursive; }
+
+.font-sample { display:block; margin:10px 0; padding:8px; border:1px dashed #e0e0e0; }

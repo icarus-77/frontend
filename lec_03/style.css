@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    background-color: #040405;
+    background-image: radial-gradient(circle at top left, rgba(255, 187, 80, 0.08), transparent 25%),
+                      linear-gradient(135deg, #070709 0%, #0b0c0e 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #efe6d0;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.intro {
+    margin-bottom: 28px;
+}
+
+.intro h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffd86b;
+}
+
+.intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d8caa8;
+    max-width: 700px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: linear-gradient(180deg, rgba(20, 20, 24, 0.97), rgba(10, 10, 12, 0.95));
+    border: 1px solid rgba(255, 209, 102, 0.25);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.video-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.video-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h2 {
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    color: #ffe09a;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbbfa3;
+}

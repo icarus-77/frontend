@@ -1,0 +1,31 @@
+body{
+    background-color: burlywood;
+    margin: 0;
+    padding: 30px;
+
+}
+.container{
+    width: 80%;
+    max-width: 700px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff8e7;
+}
+
+.container-left {
+    font-family: Georgia, serif;
+    text-align: left;
+    
+}
+
+.container-center {
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: center;
+}
+
+.container-right {
+    font-family: "Courier New", monospace;
+    text-align: right;
+}

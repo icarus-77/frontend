@@ -1,0 +1,113 @@
+:root {
+  --bg: #210101;
+  --panel: #141416;
+  --text: #f2ece6;
+  --muted: #9a948d;
+  --accent: #8b0000;
+  --border: #2a2a30;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(11, 11, 12, 0.95), #050505);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+header {
+  padding: 1.2rem 5%;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.7rem;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4.5rem 5% 2.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.8rem;
+}
+
+.btn-gothic {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: var(--panel);
+}
+
+.btn-gothic:hover {
+  background: var(--accent);
+}
+
+.grid-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 5% 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.goth_card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.card-tag {
+  display: block;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
