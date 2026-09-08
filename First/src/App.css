@@ -1,0 +1,60 @@
+.site-shell {
+  width: min(100% - 32px, 760px);
+  min-height: 100svh;
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.site-name {
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+.text-page {
+  max-width: 600px;
+  padding: 48px 0;
+}
+
+.narrow-page {
+  max-width: 600px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.intro {
+  max-width: 600px;
+}
+
+.text-link {
+  margin-left: 4px;
+}
+
+@media (max-width: 600px) {
+  .site-shell {
+    width: min(100% - 32px, 960px);
+  }
+
+  .site-header {
+    display: block;
+  }
+
+  nav {
+    margin-top: 8px;
+  }
+}
+}
