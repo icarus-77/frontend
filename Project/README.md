@@ -1,70 +1,55 @@
-# 🥭 The Mango Harvest — Gamified Kanban Board
+# Mango Chango 🥭 — Phase 2: Team Collaboration & Modernization
 
-A state-of-the-art, gamified task management web application built with **React 19**, **Vite**, **Zustand**, **GSAP**, **Framer Motion**, and **@dnd-kit**.
+A high-performance gamified task and orchard collaboration platform built with **React 19**, **TypeScript**, **Vite**, **Zustand**, and **Tailwind CSS v4**.
 
-![The Mango Harvest Banner](public/vite.svg)
-
----
-
-## 🌟 Highlights & Features
-
-- 📜 **Interactive Scroll-Driven Narrative**: An immersive GSAP & ScrollTrigger introduction telling the story of task ripening, from raw seeds to golden harvested mangoes.
-- 📋 **Gamified Kanban Board**: 3 distinct ripening stages (`Backlog / Seeds`, `In Progress / Ripening`, `Done / Harvested`) with drag-and-drop controls powered by `@dnd-kit`.
-- ⚡ **Virtue & Upgrade System**: Dynamic XP calculation, virtue weights (*Intellect*, *Harmony*, *Discipline*, *Resilience*), and harvest level leveling.
-- 🎨 **Rich Aesthetics & Glassmorphic UI**: Sleek dark-mode palette (`slate-950`), custom CSS animations, micro-interactions, floating particle effects, and animated charts powered by `recharts`.
-- 🏆 **Celebration Portal**: Trigger celebratory blend animations upon board completion, calculating session yields, harvest efficiency, and virtue gains.
-- 📦 **Nutritional Carton Label**: A playful 3D-flipped product label summarizing harvest statistics and task metrics.
+**Mango Harvest** reframes team productivity into a vibrant agricultural-to-beverage journey: plant unfinished objectives as **Seeds**, nurture them through collaborative **Ripening**, and reap synchronized **Harvests** to blend custom session Tetrapacks with deep virtue analytics.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Key Highlights & Architecture
 
-| Domain | Technologies |
-|---|---|
-| **Core Framework** | React 19, Vite 8, JavaScript (ES Next) |
-| **State Management** | Zustand (with selector middleware) |
-| **Drag & Drop** | `@dnd-kit/core`, `@dnd-kit/sortable`, `@dnd-kit/utilities` |
-| **Animations** | GSAP 3 (ScrollTrigger), Framer Motion |
-| **Styling** | Tailwind CSS v4, Custom Vanilla CSS Design System |
-| **Data Visualization** | Recharts, Lucide Icons |
-| **Code Quality** | Oxlint |
+### 1. Modern Core Stack
+- **Framework**: React 19 + TypeScript (strict typing for all task payloads, RBAC roles, and state).
+- **State Management**: Zustand with persistent storage (`useGardenStore.ts`).
+- **Server Cache & Async Sync**: TanStack Query (`@tanstack/react-query`) with optimistic updates.
+- **Styling**: Tailwind CSS v4 + rich glassmorphism CSS design system.
+- **Testing**: Vitest unit test suite covering virtue rankings, RBAC permissions, and board state transitions.
 
----
+### 2. Real-Time Collaboration & Team Orchards
+- **Team Orchards (Workspaces)**:
+  - **Home Garden**: Private sanctuary for personal daily seeds and deep focus bursts.
+  - **Alpha Orchard**: Cross-functional team workspace with multi-user board collaboration.
+  - **Zen Grove**: Creative and research side-quest orchard.
+- **Role-Based Access Control (RBAC)**:
+  - **Garden Keeper (Admin)**: Full CRUD permissions on tasks, delete actions, user management, and workspace settings.
+  - **Harvester (Member)**: Create, assign, move, and cross-pollinate tasks.
+  - **Observer (Viewer)**: Read-only access with locked mutation safeguards.
+- **Real-Time Synchronization**:
+  - `BroadcastChannel` real-time synchronization across multi-tab active sessions out of the box.
+- **Live Multi-User Cursors**:
+  - Teammate cursors rendered live on-screen with individual role-coded colors (Maya, Leo, Nina) trailing custom water droplets during interactions.
+- **Synchronized Harvest Celebration**:
+  - Trigger synchronized celebration across all connected orchard clients with animated blending and 3D interactive nutrition cartons.
 
-## 🚀 Getting Started
+### 3. Multi-View Routing & Pages
+- **Board View (`/`)**: Enhanced 3-column Kanban with real-time presence avatars, assignee badges, drag-and-drop, and filter bars (Assignee, Virtue, Difficulty, Search).
+- **Garden Analytics Hub (`/analytics`)**:
+  - Dual-Polygon Virtue Balance Radar Chart (Individual vs. Team Average comparison).
+  - Sprint burn-down trajectory vs ideal velocity.
+  - Hourly productivity peak-time distribution (9 AM - 6 PM).
+  - Key velocity and harvest turnaround metrics.
+- **Orchard Timeline (`/timeline`)**:
+  - Interactive Gantt chart visualizing task "Ripening Periods" over calendar time.
+  - Dependency rules and milestone markers.
+- **Harvest Archive (`/archive`)**:
+  - Gallery of completed session Tetrapacks.
+  - Searchable by batch ID, recipe formula, date, dominant virtue, and participating team members.
+  - Interactive 3D flip-card carton with comprehensive Virtue Nutrition Table.
 
-### Prerequisites
-- Node.js `^18.0.0` or higher
-- npm `^9.0.0` or higher
-
-### Installation & Local Setup
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/icarus-77/frontend.git
-   cd frontend/Project
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-   Open `http://localhost:5173/` in your browser.
-
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
-
-5. **Run Linter**:
-   ```bash
-   npm run lint
-   ```
+### 4. Enhanced Gamification Mechanics
+- **Team Virtues & Goals**: Collaborative objectives (e.g., *Discipline Sprint*, *Cross-Pollination Harmony Surge*) with progress bars and claimable XP rewards.
+- **Cross-Pollination (Task Transfers)**: Transfer seed tasks to teammates with an attached **+25% XP bonus multiplier**.
+- **Custom Blends**: Configure recipe formulas (*Focus Nectar*, *Resilience Smoothie*, *Golden Harmony Tonic*, *Vitality Splash*, *Sun Sage Reserve*) requiring specific virtue ratios.
 
 ---
 
@@ -72,30 +57,63 @@ A state-of-the-art, gamified task management web application built with **React 
 
 ```text
 Project/
-├── public/
 ├── src/
+│   ├── api/
+│   │   └── useGardenQueries.ts      # TanStack Query hooks & optimistic mutations
 │   ├── components/
-│   │   ├── BlenderSVG.jsx       # Custom SVG vector graphics for blender
-│   │   ├── Board.jsx            # Main Kanban board container
-│   │   ├── CartonLabel.jsx      # Interactive 3D nutrition facts carton
-│   │   ├── CelebrationPortal.jsx# Harvest celebration overlay
-│   │   ├── Column.jsx           # Drop target column component
-│   │   ├── ProfileStats.jsx     # User statistics modal & graphs
-│   │   ├── ScrollStory.jsx      # ScrollTrigger landing page experience
-│   │   └── TaskCard.jsx         # Draggable task card with virtue badges
+│   │   ├── common/
+│   │   │   ├── ProfileDrawer.tsx    # Lifetime stats & personal radar drawer
+│   │   │   └── SprinklerCursorOverlay.tsx # Multi-user cursor & droplet spray
+│   │   ├── layout/
+│   │   │   └── Navbar.tsx           # Navigation, workspace switcher & RBAC toggle
+│   │   └── modals/
+│   │       ├── CelebrationPortal.tsx # Synchronized harvest 3D carton reveal
+│   │       ├── CrossPollinateModal.tsx # Task transfer with +25% XP bonus
+│   │       ├── RecipeConfigModal.tsx # Custom blend recipe configurator
+│   │       └── TaskModal.tsx        # Task creator modal with templates
+│   ├── constants/
+│   │   └── gardenConstants.ts       # Virtues, users, recipes, and seed data
+│   ├── pages/
+│   │   ├── BlendHistory.tsx         # Archive of past harvests & cartons
+│   │   ├── BoardView.tsx            # Enhanced Kanban board with team filters
+│   │   ├── GardenAnalytics.tsx      # Virtue radar & productivity analytics
+│   │   └── OrchardTimeline.tsx      # Gantt timeline view for ripening
 │   ├── store/
-│   │   └── useStore.js          # Main Zustand global state & logic
-│   ├── virtues.js               # Virtue calculations & level algorithms
-│   ├── App.jsx                  # Root view navigator (Landing vs Board)
-│   ├── index.css                # Global design system & custom utilities
-│   └── main.jsx                 # React DOM root entry
-├── index.html                   # HTML entry point with meta & Google Fonts
-├── package.json
-└── vite.config.js
+│   │   └── useGardenStore.ts        # Zustand state store with BroadcastChannel
+│   ├── styles/
+│   │   └── main.css                 # Tailwind CSS v4 & custom design tokens
+│   ├── tests/
+│   │   └── gardenStore.test.ts      # Vitest unit test suite
+│   ├── types/
+│   │   └── garden.ts                # TypeScript interfaces and domain models
+│   ├── App.tsx                      # Root App component
+│   └── main.tsx                     # React 19 entry point
+├── index.html                       # HTML5 entry template
+├── vite.config.ts                   # Vite configuration with React & Tailwind v4
+├── tsconfig.json                    # TypeScript compiler configuration
+└── package.json                     # Dependencies, scripts and tools
 ```
 
 ---
 
-## 📄 License
+## 🛠️ Running Locally
 
-Distributed under the MIT License. See `LICENSE` for more information.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the local development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Run unit tests:**
+   ```bash
+   npm test
+   ```
+
+4. **Build production bundle:**
+   ```bash
+   npm run build
+   ```
